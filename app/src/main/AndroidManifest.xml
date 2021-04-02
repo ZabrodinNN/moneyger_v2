@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Moneyger_v2">
+        <activity android:name=".RemindersActivity"></activity>
+        <activity android:name=".StatusActivity" />
+        <activity android:name=".ExpenseActivity" />
+        <activity android:name=".BudgetActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

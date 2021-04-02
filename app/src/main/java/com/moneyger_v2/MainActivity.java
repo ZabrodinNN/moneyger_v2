@@ -16,12 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //firebase reference
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Budget").child("Food");
-        myRef.setValue("1500");
-        DatabaseReference myRef2 = database.getReference("Expenses").child("iPhone");
-        myRef2.setValue("150");
+
     }
 
     public void loadBudget (View view) {

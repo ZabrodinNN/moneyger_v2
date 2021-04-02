@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "15947534777",
+    "firebase_url": "https://moneyger-fe45a-default-rtdb.firebaseio.com",
+    "project_id": "moneyger-fe45a",
+    "storage_bucket": "moneyger-fe45a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15947534777:android:b233588bb66ac822f4e668",
+        "android_client_info": {
+          "package_name": "com.moneyger_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15947534777-mntdpmaig33hldlaof5manqp10dtgasv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWmVW1fextn_Q-hEP3Rvthm-Jg-TRGezw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "15947534777-mntdpmaig33hldlaof5manqp10dtgasv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

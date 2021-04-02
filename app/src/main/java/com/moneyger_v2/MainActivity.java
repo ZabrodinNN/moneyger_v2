@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        setTitle("Moneyger -  Money Manager App");
     }
 
     public void loadBudget (View view) {

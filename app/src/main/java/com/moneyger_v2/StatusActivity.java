@@ -25,6 +25,8 @@ public class StatusActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
+
+        setTitle("Moneyger -  Money Manager App");
     }
 
 }

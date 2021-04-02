@@ -20,6 +20,8 @@ public class BudgetActivity extends AppCompatActivity {
         edit_Budget = findViewById(R.id.editBudget);
         delete_Budget = findViewById(R.id.deleteBudget);
 
+        setTitle("Moneyger -  Money Manager App");
+
         new_Budget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -53,7 +53,7 @@ public class newBudget extends Fragment {
                         savedBudget budget = new savedBudget(name, value);
                         showToast();
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("Budget").child("April");
+                        DatabaseReference myRef = database.getReference("Budget").child(name);
                         myRef.setValue(budget);
                     }
                 }

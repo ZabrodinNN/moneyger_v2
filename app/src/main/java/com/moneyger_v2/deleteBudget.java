@@ -45,10 +45,14 @@ public class deleteBudget extends Fragment {
                     name = nameBudget.getText().toString();
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Budget").child(name);
                     reference.removeValue();
+                    showToast();
                 }
             }
         });
 
         return view;
+    }
+    public void showToast() {
+        Toast.makeText(getActivity(), "Your budget has been deleted", Toast.LENGTH_SHORT).show();
     }
 }

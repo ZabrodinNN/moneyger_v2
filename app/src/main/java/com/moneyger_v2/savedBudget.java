@@ -1,10 +1,10 @@
 package com.moneyger_v2;
 
 public class savedBudget {
-    public String budgetName;
-    public int value;
+    private String budgetName;
+    private String value;
 
-    public savedBudget(String budgetName, int value) {
+    public savedBudget(String budgetName, String value) {
         this.budgetName = budgetName;
         this.value = value;
     }
@@ -17,11 +17,11 @@ public class savedBudget {
         this.budgetName = budgetName;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

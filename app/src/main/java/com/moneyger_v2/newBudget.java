@@ -19,14 +19,12 @@ import com.google.firebase.database.FirebaseDatabase;
 public class newBudget extends Fragment {
     View view;
     Button fragmentButton;
-
     String name;
     int value;
-
     EditText budgetName;
     EditText budgetValue;
-
     Button saveBudget;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,7 +48,7 @@ public class newBudget extends Fragment {
                         Toast.makeText(getActivity(), "Please input the budget value", Toast.LENGTH_SHORT).show();
                     } else {
                         value = Integer.parseInt( budgetValue.getText().toString());
-                        savedBudget budget = new savedBudget(name, value);
+                        savedBudget budget = new savedBudget(name, Integer.toString(value));
                         showToast();
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference myRef = database.getReference("Budget").child(name);
@@ -62,6 +60,7 @@ public class newBudget extends Fragment {
 
         return view;
     }
+
     public void showToast() {
         Toast.makeText(getActivity(), "Your budget has been saved", Toast.LENGTH_SHORT).show();
     }

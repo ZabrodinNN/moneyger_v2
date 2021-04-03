@@ -7,58 +7,6 @@
     tools:context=".MainActivity"
     android:background="@drawable/moneyger">
 
-    <Button
-        android:id="@+id/Budgetbutton"
-        android:layout_width="270dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="60dp"
-        android:onClick="loadBudget"
-        android:text="Budgets"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="invisible" />
-
-    <Button
-        android:id="@+id/Reminderbutton"
-        android:layout_width="270dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:onClick="loadReminders"
-        android:text="Reminders"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Statusbutton"
-        tools:visibility="invisible" />
-
-    <Button
-        android:id="@+id/Statusbutton"
-        android:layout_width="270dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:onClick="loadStatus"
-        android:text="Status"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Expensebutton"
-        tools:visibility="invisible" />
-
-    <Button
-        android:id="@+id/Expensebutton"
-        android:layout_width="270dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:onClick="loadExpense"
-        android:text="Expenses"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Budgetbutton"
-        tools:visibility="invisible" />
-
     <include layout="@layout/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".newBudget"
+    tools:context=".deleteBudget"
     android:gravity="center">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +19,6 @@
             android:text="Name of Budget"
             android:textColor="@color/font_color"
             android:textSize="30dp"
-            app:layout_constraintBottom_toBottomOf="@+id/budgetName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

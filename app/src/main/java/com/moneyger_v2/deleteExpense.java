@@ -45,10 +45,14 @@ public class deleteExpense extends Fragment {
                     name = nameExpense.getText().toString();
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Expenses").child(name);
                     reference.removeValue();
+                    showToast();
                 }
             }
         });
 
         return view;
+    }
+    public void showToast() {
+        Toast.makeText(getActivity(), "Your expense has been deleted", Toast.LENGTH_SHORT).show();
     }
 }

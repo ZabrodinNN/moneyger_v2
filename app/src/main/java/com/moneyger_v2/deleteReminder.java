@@ -45,10 +45,14 @@ public class deleteReminder extends Fragment {
                     name = nameReminder.getText().toString();
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Reminders").child(name);
                     reference.removeValue();
+                    showToast();
                 }
             }
         });
 
         return view;
+    }
+    public void showToast() {
+        Toast.makeText(getActivity(), "Your reminder has been deleted", Toast.LENGTH_SHORT).show();
     }
 }

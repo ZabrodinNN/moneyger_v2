@@ -1,9 +1,11 @@
 package com.moneyger_v2;
 
 import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -19,8 +21,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StatusFragment extends Fragment {
     View view;
@@ -30,6 +36,7 @@ public class StatusFragment extends Fragment {
     Button showBudget;
     Button showExpense;
     Button showReminders;
+    String result;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,11 +51,22 @@ public class StatusFragment extends Fragment {
                 firebaseDatabase = FirebaseDatabase.getInstance();
                 databaseReference = firebaseDatabase.getReference("Budget");
                 databaseReference.addValueEventListener(new ValueEventListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
                     @SuppressLint("SetTextI18n")
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Map<String, Object> td = (HashMap<String, Object>) snapshot.getValue();
-                        text.setText(td.toString());
+                        Map<String, savedBudget> td = (HashMap<String, savedBudget>) snapshot.getValue();
+                        assert td != null;
+                        List<String> keyList = new ArrayList<>(td.keySet());
+                        List<savedBudget> valueList = new ArrayList<>(td.values());
+
+                        for (int i = 0; i < valueList.size(); i++) {
+                            //Map<String, String> ab = (HashMap<String, String>) valueList.get(i);
+                            //savedBudget each = new savedBudget(valueList.get(i).getBudgetName(), valueList.get(i).getValue());
+                            //savedBudget zzz = new savedBudget(valueList.get(i).budgetName, valueList.get(i).value);
+                            result += valueList.get(i).getBudgetName() + "\n\n";
+                        }
+                        text.setText(result);
                     }
 
                     @Override

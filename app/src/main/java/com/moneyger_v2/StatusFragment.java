@@ -28,19 +28,21 @@ public class StatusFragment extends Fragment {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     Button showBudget;
+    Button showExpense;
+    Button showReminders;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_status, container, false);
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Budget");
         text = view.findViewById(R.id.textView);
         showBudget = (Button) view.findViewById(R.id.selectBudget);
         showBudget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                firebaseDatabase = FirebaseDatabase.getInstance();
+                databaseReference = firebaseDatabase.getReference("Budget");
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @SuppressLint("SetTextI18n")
                     @Override
@@ -56,6 +58,49 @@ public class StatusFragment extends Fragment {
                 });
             }
         });
+        showExpense = (Button) view.findViewById(R.id.selectBudget2);
+        showExpense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseDatabase = FirebaseDatabase.getInstance();
+                databaseReference = firebaseDatabase.getReference("Expenses");
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Map<String, Object> td = (HashMap<String, Object>) snapshot.getValue();
+                        text.setText(td.toString());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(getActivity(), "Failed to get data.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+        showReminders = (Button) view.findViewById(R.id.selectBudget3);
+        showReminders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseDatabase = FirebaseDatabase.getInstance();
+                databaseReference = firebaseDatabase.getReference("Reminders");
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Map<String, Object> td = (HashMap<String, Object>) snapshot.getValue();
+                        text.setText(td.toString());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(getActivity(), "Failed to get data.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
 
 
         return view;

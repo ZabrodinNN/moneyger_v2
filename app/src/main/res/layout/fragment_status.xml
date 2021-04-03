@@ -15,8 +15,30 @@
             android:id="@+id/selectBudget"
             android:layout_width="170dp"
             android:layout_height="38dp"
-            android:layout_marginBottom="84dp"
+            android:layout_marginBottom="128dp"
             android:text="Show Budget"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/selectBudget2"
+            android:layout_width="170dp"
+            android:layout_height="38dp"
+            android:layout_marginBottom="88dp"
+            android:text="Show Expenses"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/selectBudget3"
+            android:layout_width="170dp"
+            android:layout_height="38dp"
+            android:layout_marginBottom="48dp"
+            android:text="Show Reminders"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -24,8 +46,8 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="328dp"
-            android:layout_height="546dp"
+            android:layout_width="337dp"
+            android:layout_height="495dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"

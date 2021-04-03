@@ -47,9 +47,8 @@
         <FrameLayout
             android:id="@+id/budgetFrame"
             android:layout_width="339dp"
-            android:layout_height="503dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"

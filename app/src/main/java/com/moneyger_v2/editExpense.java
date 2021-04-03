@@ -48,7 +48,7 @@ public class editExpense extends Fragment {
                         value = Integer.parseInt(editExpenseValue.getText().toString());
                         DatabaseReference rootDatabaseRef = FirebaseDatabase.getInstance().getReference("Expenses").child(name);
                         HashMap hashmap = new HashMap();
-                        hashmap.put("expenseName", name);
+                        hashmap.put("budgetName", name);
                         hashmap.put("value", Integer.toString(value));
 
                         rootDatabaseRef.updateChildren(hashmap).addOnSuccessListener(new OnSuccessListener() {

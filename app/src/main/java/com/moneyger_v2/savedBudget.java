@@ -1,8 +1,8 @@
 package com.moneyger_v2;
 
 public class savedBudget {
-    private String budgetName;
-    private String value;
+    public String budgetName;
+    public String value;
 
     public savedBudget(String budgetName, String value) {
         this.budgetName = budgetName;

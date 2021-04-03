@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/budgetButton"
+        android:title="Budget"
+        android:icon="@drawable/budget_icon"/>
+
+    <item android:id="@+id/expenseButton"
+        android:title="Expense"
+        android:icon="@drawable/expense_icon"/>
+
+    <item android:id="@+id/statusButton"
+        android:title="Status"
+        android:icon="@drawable/status_icon"/>
+
+    <item android:id="@+id/reminderButton"
+        android:title="Reminder"
+        android:icon="@drawable/reminder_icon"/>
+
+</menu>

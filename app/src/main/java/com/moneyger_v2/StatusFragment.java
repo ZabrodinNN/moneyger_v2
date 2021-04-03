@@ -51,22 +51,11 @@ public class StatusFragment extends Fragment {
                 firebaseDatabase = FirebaseDatabase.getInstance();
                 databaseReference = firebaseDatabase.getReference("Budget");
                 databaseReference.addValueEventListener(new ValueEventListener() {
-                    @RequiresApi(api = Build.VERSION_CODES.N)
                     @SuppressLint("SetTextI18n")
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Map<String, savedBudget> td = (HashMap<String, savedBudget>) snapshot.getValue();
-                        assert td != null;
-                        List<String> keyList = new ArrayList<>(td.keySet());
-                        List<savedBudget> valueList = new ArrayList<>(td.values());
-
-                        for (int i = 0; i < valueList.size(); i++) {
-                            //Map<String, String> ab = (HashMap<String, String>) valueList.get(i);
-                            //savedBudget each = new savedBudget(valueList.get(i).getBudgetName(), valueList.get(i).getValue());
-                            //savedBudget zzz = new savedBudget(valueList.get(i).budgetName, valueList.get(i).value);
-                            result += valueList.get(i).getBudgetName() + "\n\n";
-                        }
-                        text.setText(result);
+                        Map<String, Object> td = (HashMap<String, Object>) snapshot.getValue();
+                        text.setText(td.toString());
                     }
 
                     @Override

@@ -10,6 +10,7 @@
 
     <color name="background_color">#FFF0E0</color>
     <color name="font_color">#001D3F</color>
-    <color name="menu_background">#40CE98</color>
+    <color name="menu_background">#BDC1C0</color>
+    <color name="hint_color">#708090</color>
 
 </resources>

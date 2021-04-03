@@ -17,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class newExpense extends Fragment {
     View view;
-    Button fragmentButton;
     String name;
     int cost;
     EditText expenseName;

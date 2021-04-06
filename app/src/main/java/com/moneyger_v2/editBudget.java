@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+//A fragment used for editing budgets
 public class editBudget extends Fragment {
     View view;
     Button fragmentButton, editBudget;
@@ -45,6 +46,7 @@ public class editBudget extends Fragment {
                     if (TextUtils.isEmpty(editBudgetValue.getText().toString())) {
                         Toast.makeText(getActivity(), "Please input the new budget value", Toast.LENGTH_SHORT).show();
                     } else {
+                        //Creates a hashmap then calls the Firebase function to edit the specific budget.
                         value = Integer.parseInt(editBudgetValue.getText().toString());
                         DatabaseReference rootDatabaseRef = FirebaseDatabase.getInstance().getReference("Budget").child(name);
                         HashMap hashmap = new HashMap();
@@ -65,6 +67,7 @@ public class editBudget extends Fragment {
 
         return view;
     }
+        //Notifies the user that the budget has been successfully edited.
         public void showToast() {
             Toast.makeText(getActivity(), "Your budget has been edited", Toast.LENGTH_SHORT).show();
         }

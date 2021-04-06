@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+//A fragment used for editing reminders.
 public class editReminder extends Fragment {
 
     @Override

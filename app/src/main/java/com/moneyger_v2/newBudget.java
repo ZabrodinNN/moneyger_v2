@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-
+//A fragment used for creating new budget
 public class newBudget extends Fragment {
     View view;
     Button fragmentButton;
@@ -47,6 +47,7 @@ public class newBudget extends Fragment {
                     if (TextUtils.isEmpty(budgetValue.getText().toString())) {
                         Toast.makeText(getActivity(), "Please input the budget value", Toast.LENGTH_SHORT).show();
                     } else {
+                        //Creates a budget object then calls the Firebase function to create a new budget.
                         value = Integer.parseInt( budgetValue.getText().toString());
                         savedBudget budget = new savedBudget(name, Integer.toString(value));
                         showToast();
@@ -61,6 +62,7 @@ public class newBudget extends Fragment {
         return view;
     }
 
+    //Notifies the user that the budget has been successfully created.
     public void showToast() {
         Toast.makeText(getActivity(), "Your budget has been saved", Toast.LENGTH_SHORT).show();
     }

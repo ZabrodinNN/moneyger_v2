@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+//A fragment for deleting reminder.
 public class deleteReminder extends Fragment {
     View view;
     EditText nameReminder;
@@ -42,6 +43,7 @@ public class deleteReminder extends Fragment {
                 if (TextUtils.isEmpty(nameReminder.getText().toString()) || nameReminder.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getActivity(), "Please input the reminder", Toast.LENGTH_SHORT).show();
                 } else {
+                    //Calls the Firebase function to delete the specific reminder.
                     name = nameReminder.getText().toString();
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Reminders").child(name);
                     reference.removeValue();
@@ -52,6 +54,7 @@ public class deleteReminder extends Fragment {
 
         return view;
     }
+    //Notifies the user that the reminder has been successfully deleted.
     public void showToast() {
         Toast.makeText(getActivity(), "Your reminder has been deleted", Toast.LENGTH_SHORT).show();
     }

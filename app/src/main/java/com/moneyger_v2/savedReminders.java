@@ -1,5 +1,7 @@
 package com.moneyger_v2;
 
+
+//A java class used to create reminder objects to be saved.
 public class savedReminders {
     private String reminderText;
 

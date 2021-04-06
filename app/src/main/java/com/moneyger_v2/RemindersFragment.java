@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+//This fragment is for handling all the fragments for all reminder functions (adding, editing, deleting).
 public class RemindersFragment extends Fragment {
     View view;
     Button new_Reminder, edit_Reminder, delete_Reminder;
@@ -48,6 +49,7 @@ public class RemindersFragment extends Fragment {
         return view;
     }
 
+    //Function used to access the three reminder fragments.
     private void setFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

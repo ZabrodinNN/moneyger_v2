@@ -1,5 +1,7 @@
 package com.moneyger_v2;
 
+
+//A java class used for creating budget and expense objects to be saved.
 public class savedBudget {
     public String budgetName;
     public String value;

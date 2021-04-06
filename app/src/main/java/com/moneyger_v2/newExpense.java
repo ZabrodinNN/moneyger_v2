@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+//A fragment used for creating new expense
 public class newExpense extends Fragment {
     View view;
     String name;
@@ -43,6 +44,7 @@ public class newExpense extends Fragment {
                     if (TextUtils.isEmpty(expenseValue.getText().toString())) {
                         Toast.makeText(getActivity(), "Please input the expense cost", Toast.LENGTH_SHORT).show();
                     } else {
+                        //Creates an expense object then calls the Firebase function to create a new expense.
                         cost = Integer.parseInt( expenseValue.getText().toString());
                         savedBudget expense = new savedBudget(name, Integer.toString(cost));
                         showToast();
@@ -56,6 +58,8 @@ public class newExpense extends Fragment {
 
         return view;
     }
+
+    //Notifies the user that the expense has been successfully created.
     public void showToast() {
         Toast.makeText(getActivity(), "Your expense has been saved", Toast.LENGTH_SHORT).show();
     }

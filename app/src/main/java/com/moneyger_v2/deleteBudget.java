@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+//A fragment for deleting budget.
 public class deleteBudget extends Fragment {
     View view;
     EditText nameBudget;
@@ -42,6 +43,7 @@ public class deleteBudget extends Fragment {
                 if (TextUtils.isEmpty(nameBudget.getText().toString()) || nameBudget.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getActivity(), "Please input the budget name", Toast.LENGTH_SHORT).show();
                 } else {
+                    //Calls the Firebase function to delete the specific budget.
                     name = nameBudget.getText().toString();
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Budget").child(name);
                     reference.removeValue();
@@ -52,6 +54,7 @@ public class deleteBudget extends Fragment {
 
         return view;
     }
+    //Notifies the user that the budget has been successfully deleted.
     public void showToast() {
         Toast.makeText(getActivity(), "Your budget has been deleted", Toast.LENGTH_SHORT).show();
     }

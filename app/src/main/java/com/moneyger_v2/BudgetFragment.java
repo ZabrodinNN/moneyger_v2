@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+//This fragment is for handling all the fragments for all budget functions (adding, editing, deleting).
 public class BudgetFragment extends Fragment {
     View view;
     Button new_Budget, edit_Budget, delete_Budget;
@@ -48,6 +49,7 @@ public class BudgetFragment extends Fragment {
         return view;
     }
 
+    //Function used to access the three budget fragments.
     private void setFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

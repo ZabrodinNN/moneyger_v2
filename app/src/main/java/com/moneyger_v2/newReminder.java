@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+//A fragment used for creating new reminder
 public class newReminder extends Fragment {
     View view;
     String reminder;
@@ -35,6 +36,7 @@ public class newReminder extends Fragment {
                 if (TextUtils.isEmpty(reminderText.getText().toString()) || reminderText.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getActivity(), "Please input a reminder", Toast.LENGTH_SHORT).show();
                 } else {
+                    //Creates a reminder object then calls the Firebase function to create a new reminder.
                     reminder = reminderText.getText().toString();
                     savedReminders reminders = new savedReminders(reminder);
                     showToast();
@@ -47,6 +49,8 @@ public class newReminder extends Fragment {
 
         return view;
     }
+
+    //Notifies the user that the reminder has been successfully created.
     public void showToast() {
         Toast.makeText(getActivity(), "Your reminder has been saved", Toast.LENGTH_SHORT).show();
     }

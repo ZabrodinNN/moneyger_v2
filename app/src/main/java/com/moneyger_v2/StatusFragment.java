@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+//This fragment is for handling all of the status functions (show budget, show expense, show reminder).
 public class StatusFragment extends Fragment {
     View view;
     TextView text;
@@ -44,6 +45,8 @@ public class StatusFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_status, container, false);
         text = view.findViewById(R.id.textView);
+
+        ///An onclick event for the show budget. Shows all the created budgets when clicked.
         showBudget = (Button) view.findViewById(R.id.selectBudget);
         showBudget.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +68,8 @@ public class StatusFragment extends Fragment {
                 });
             }
         });
+
+        //An onclick event for the show expense. Shows all the created expenses when clicked.
         showExpense = (Button) view.findViewById(R.id.selectBudget2);
         showExpense.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +91,8 @@ public class StatusFragment extends Fragment {
                 });
             }
         });
+
+        //An onclick event for the show reminder. Shows all the created reminders when clicked.
         showReminders = (Button) view.findViewById(R.id.selectBudget3);
         showReminders.setOnClickListener(new View.OnClickListener() {
             @Override

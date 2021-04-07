@@ -13,6 +13,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.NotNull;
 
+//This activity handles the functions for the Main Activity
+//This is also called when the application is launched
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle("Moneyger - Money Manager App");
     }
 
+    //Function to load Content Activity when Button is clicked
     public void loadContent (View view) {
         Intent intent = new Intent(this, ContentActivity.class);
         startActivity(intent);

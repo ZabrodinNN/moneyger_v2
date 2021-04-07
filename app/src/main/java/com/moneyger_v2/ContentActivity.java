@@ -12,12 +12,13 @@ import android.widget.FrameLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.annotations.NotNull;
 
+//This activity handles the functions for the Content Activity
 public class ContentActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
 
-    // Fragments
+    //Fragments that can be accessed from this activity
     private BudgetFragment budgetFragment;
     private ExpenseFragment expenseFragment;
     private StatusFragment statusFragment;
@@ -38,8 +39,10 @@ public class ContentActivity extends AppCompatActivity {
         statusFragment = new StatusFragment();
         remindersFragment = new RemindersFragment();
 
+        //Sets the default fragment shown on screen
         setFragment(budgetFragment);
 
+        //Event listener for the navigation bar
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
@@ -69,6 +72,7 @@ public class ContentActivity extends AppCompatActivity {
 
     }
 
+    //Function used to access the fragment selected
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_frame, fragment);
